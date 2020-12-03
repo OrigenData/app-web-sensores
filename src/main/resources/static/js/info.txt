@@ -1,0 +1,14 @@
+$(document).ready(function() {
+    $('#mytable').DataTable({
+         "ajax": {
+             "url": "datos/mascotas.json",
+             "dataSrc": ""
+         },
+        "columns": [
+            { "data": "tipo" },
+            { "data": "nombre" },
+            { "data": "color" },
+            { "data": "edad" }
+        ]
+    });
+});

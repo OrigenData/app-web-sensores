@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>App Fragments</title>
+</head>
+<body>
+
+	<!-- Default Navigator -->
+	<ul th:fragment="nav-default" id="menu-side" class="sidenav dark">
+		<li><div class="user-view">
+				<div class="background" style="background-color: #454545">
+					<img src="" alt="">
+				</div>
+				<a href="#user"><img class="circle"
+					th:src="@{/img/avatar-0.png}" alt=""></a> <a href="#name"><span
+					class="white-text name" sec:authentication="name">Cristian Escobedo </span></a> <a href="#email"><span
+					class="white-text email">~@mail.com</span></a>
+			</div></li>
+		<li><a class="waves-effect waves-light"
+			th:href="@{/admin/dashboard}"><i class="material-icons">home</i>Inicio</a></li>
+		<li><a class="waves-effect waves-light"
+			th:href="@{/admin/dashboard/template}"><i class="material-icons">check_circle</i>Item2</a></li>
+		<li><a class="waves-effect waves-light"
+			th:href="@{/admin/dashboard/agregar-usuarios}"><i
+				class="material-icons">check_circle</i>Agregar usuario</a></li>
+		<li><div class="divider"></div></li>
+		<li><a class="subheader">PERFIL</a></li>
+		<li><a class="waves-effect waves-light" href="#!"><i
+				class="material-icons">keyboard</i>Cambiar Datos</a></li>
+	</ul>
+
+
+
+	<!-- Admin Navigator -->
+
+	<ul th:fragment="nav-admin">
+		<li><a th:href="@{/admin/products}">Product Management</a></li>
+		<li><a th:href="@{/admin/orders}">Order Management</a></li>
+	</ul>
+
+
+
+	<div th:fragment="copyright">&copy; o7planning.org</div>
+
+
+
+</body>
+</html>

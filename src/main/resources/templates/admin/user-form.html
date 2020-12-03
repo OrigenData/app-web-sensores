@@ -1,0 +1,66 @@
+	<div class="row">
+
+		<form class="col s12" action="#" th:action="@{saveUsuarios}"
+			th:object="${usuarios}" method="post" modelAttribute="usuarios">
+
+			<div class="row card">
+
+				<div class="card-panel blue darken-3 z-depth-3">
+					<h4 class="grey-text text-lighten-5">Registro de nuevo usuario</h4>
+				</div>
+				
+	
+
+				<div class="input-field col s12">
+					<input type="text" id="nombre" th:field="*{nombre}"> <label
+						for="nombre">Nombre completo</label>
+				</div>
+
+			
+				<div class="input-field col s12">
+					<input type="text" id="nombre" th:field="*{email}"> <label
+						for="nombre">Correo</label>
+				</div>
+
+				<div class="input-field col s12">
+					<input type="text" id="nombre" th:field="*{username}"> <label
+						for="nombre">Usuario</label>
+				</div>
+
+				<div class="input-field col s12">
+					<input type="password" id="nombre" th:field="*{password}"> <label
+						for="nombre">Contraseña</label>
+				</div>
+
+				<div class="input-field col s2">
+					<label>Rol de usuario:</label>
+
+				</div>
+
+				<div class="input-field col s10">
+
+					<p>
+						<label> <input id="exampleRadios1" name="group1"
+							type="radio" value="CLIENTE" onclick="func();" th:field="*{rol}" /> <span>Cliente</span>
+						</label>
+					</p>
+					<p>
+						<label> <input id="exampleRadios2" name="group1"
+							type="radio" value="AGENTE" onclick="func();" th:field="*{rol}" /> <span>Empleado</span>
+						</label>
+					</p>
+
+				</div>
+
+
+				<div class="right-align" style="margin: 10px">
+									      <button class="btn-floating btn-large halfway-fab waves-effect waves-light grey darken-3" name="action" type="submit">
+        <i class="material-icons">save</i>
+      </button>
+
+				</div>
+				<br>
+			</div>
+
+		</form>
+	</div>

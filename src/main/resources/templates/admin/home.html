@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<!--  main-fragment (title, otherStaticResources, header, nav, mainContent, footer)  -->
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{admin/layouts/main-layout :: main-fragment(  
+                                                ~{::title},
+                                                ~{:: #home-nav},
+                                                ~{:: #home-main-content}
+                                               )}">
+
+<head>
+<title>Pagina de inicio</title>
+
+<script type="text/javascript" src="../static/home.js"
+	th:src="@{/home.js}"></script>
+<link rel="stylesheet" type="text/css" href="../static/home.css"
+	th:href="@{/home.css}" />
+
+</th:block>
+
+</head>
+<body>
+
+
+	<div id="home-nav"
+		th:replace="~{admin/fragments/app-fragments :: nav-default}">
+		Home Nav</div>
+
+	<div id="home-main-content">
+		<h2><div sec:authentication="name">Hola  "name" </div></h2> 
+		
+
+
+		<div sec:authorize="isAuthenticated()">Este contenido solo se muestra a usuarios autenticados..</div>
+		<div sec:authorize="hasRole('ADMIN')">Solo lo puede ver el Admin.</div>
+		<div sec:authorize="hasRole('USER')">Solo lo puede ver el usuario.</div>
+
+
+	</div>
+
+
+
+</body>
+</html>

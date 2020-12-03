@@ -1,0 +1,38 @@
+
+.sidenav.dark {
+background-color: #0277bd;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+.sidenav.dark .subheader {
+  color: rgba(255, 255, 255, 0.5);
+}
+.sidenav.dark .divider {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.sidenav.dark li a {
+  color: #FFF;
+}
+.sidenav.dark li a i.material-icons {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+nav, header, main, footer {
+  padding-left: 300px;
+}
+
+@media only screen and (max-width: 992px) {
+  nav, header, main, footer {
+    padding-left: 0;
+  }
+}
+
+
+.dataTables_filter {
+    width: 80%;
+}
+
+.dataTables_filter label {
+    font-size: 15px;
+    color: #000;
+}

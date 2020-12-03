@@ -1,0 +1,26 @@
+[
+    {
+        "tipo": "hamster",
+        "nombre": "Jengibre",
+        "color": "beige",
+        "edad": "1"
+    },
+    {
+        "tipo": "hamster",
+        "nombre": "Chili",
+        "color": "marron",
+        "edad": "2"
+    },
+    {
+        "tipo": "tortuga",
+        "nombre": "Manuela",
+        "color": "marron y amarillo",
+        "edad": "35"
+    },
+    {
+        "tipo": "iguana",
+        "nombre": "Juan",
+        "color": "verde y naranja",
+        "edad": "14"
+    }
+]

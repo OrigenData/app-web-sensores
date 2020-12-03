@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<!--  main-fragment (title, otherStaticResources, header, nav, mainContent, footer)  -->
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{admin/layouts/main-layout :: main-fragment(  
+                                                ~{::title},
+                                                ~{:: #agregar-usuarios-nav},
+                                                ~{:: #agregar-usuarios-main-content}
+                                               )}">
+
+<head>
+<title>Pagina de Agregar Usuarios</title>
+
+<script type="text/javascript" src="../static/home.js"
+	th:src="@{/home.js}"></script>
+<link rel="stylesheet" type="text/css" href="../static/home.css"
+	th:href="@{/home.css}" />
+
+</th:block>
+
+</head>
+<body>
+
+
+	<div id="agregar-usuarios-nav"
+		th:replace="~{admin/fragments/app-fragments :: nav-default}">
+		Home Nav</div>
+
+	<div id="agregar-usuarios-main-content">
+
+		<div class="row">
+
+			<div class="col s12">
+
+				<div class="row card">
+
+
+					<div class="card card-panel z-depth-3e"
+						style="background-image: linear-gradient(to right top, #313944, #2a4a71, #1b5aa0, #1368d0, #3373ff);">
+
+
+
+
+						<h4 class="grey-text text-lighten-5">Usuarios Registrados</h4>
+
+
+
+
+
+						<!-- Modal Trigger -->
+						<a href="#modal1"
+							class="btn-floating btn-large halfway-fab waves-effect waves-light blue darken-3  modal-trigger">
+							<i class="material-icons">add</i>
+						</a>
+
+						<!-- Modal Structure -->
+						<div id="modal1" class="modal">
+							<div class="modal-content">
+								<div th:include="admin/user-form.html" th:remove="tag"></div>
+							</div>
+							<!-- 
+			<div class="modal-footer">
+				<a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+			</div>
+			 -->
+						</div>
+
+
+
+
+
+					</div>
+
+
+
+
+
+
+
+
+					<table>
+						<thead>
+							<tr>
+								<th>Nombre</th>
+								<th>Username</th>
+								<th>Correo</th>
+								<th>Acciones</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr th:each="data: ${Lista_Usuarios}">
+								<td th:text="${data.nombre}" />
+								<td th:text="${data.usuario}" />
+								<td th:text="${data.correo}" />
+								<td><a onclick="executeSwal()"
+									class="btn-floating  waves-effect waves-light yellow darken-3"><i
+										class="material-icons">edit</i></a> <a th:if="${data.tipo} != 0"
+									th:href="@{/admin/dashboard/delete/{id}(id=${data.id})}"
+									class="btn-floating  waves-effect waves-light red"><i
+										class="material-icons">delete</i></a></td>
+							</tr>
+						</tbody>
+					</table>
+
+
+
+
+
+				</div>
+
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+</body>
+</html>
