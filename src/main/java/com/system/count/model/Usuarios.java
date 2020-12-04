@@ -47,6 +47,15 @@ public class Usuarios implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * 
+	 * @param rol
+	 * @param nombre
+	 * @param apellido
+	 * @param email
+	 * @param username
+	 * @param password
+	 */
 	public Usuarios(String rol, String nombre, String apellido, String email, String username, String password) {
 		super();
 		this.rol = rol;

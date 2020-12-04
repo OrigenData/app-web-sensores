@@ -91,11 +91,11 @@
 						<tbody>
 							<tr th:each="data: ${Lista_Usuarios}">
 								<td th:text="${data.nombre}" />
-								<td th:text="${data.usuario}" />
-								<td th:text="${data.correo}" />
+								<td th:text="${data.username}" />
+								<td th:text="${data.email}" />
 								<td><a onclick="executeSwal()"
 									class="btn-floating  waves-effect waves-light yellow darken-3"><i
-										class="material-icons">edit</i></a> <a th:if="${data.tipo} != 0"
+										class="material-icons">edit</i></a> <a th:if="${data.rol} != 'ADMIN'"
 									th:href="@{/admin/dashboard/delete/{id}(id=${data.id})}"
 									class="btn-floating  waves-effect waves-light red"><i
 										class="material-icons">delete</i></a></td>

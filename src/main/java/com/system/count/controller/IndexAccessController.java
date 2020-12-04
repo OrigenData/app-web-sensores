@@ -13,7 +13,7 @@ public class IndexAccessController {
     @RequestMapping("/default")
     public String defaultAfterLogin(HttpServletRequest request) {
         if (request.isUserInRole("ADMIN")) {
-            return "redirect:/admin/dashboard/home";
+            return "redirect:/admin/dashboard";
         }
         return "redirect:/dashboard";
     }

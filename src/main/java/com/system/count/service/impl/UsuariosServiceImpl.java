@@ -18,8 +18,7 @@ public class UsuariosServiceImpl implements UsuariosService{
 	
 	@Override
 	public List<Usuarios> getAllUsuarios() {
-		// TODO Auto-generated method stub
-		return null;
+		return repository.findAll();
 	}
 
 	@Override
