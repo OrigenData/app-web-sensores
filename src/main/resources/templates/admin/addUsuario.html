@@ -1,20 +1,26 @@
 	<div class="row">
 
-		<form class="col s12" action="#" th:action="@{saveUsuarios}"
+		<form class="col s12" action="#" th:action="@{usuarios/save}"
 			th:object="${usuarios}" method="post" modelAttribute="usuarios">
 
 			<div class="row card">
 
-				<div class="card-panel blue darken-3 z-depth-3">
+				<div class="card-panel z-depth-3 grey darken-3">
 					<h4 class="grey-text text-lighten-5">Registro de nuevo usuario</h4>
 				</div>
 				
 	
 
-				<div class="input-field col s12">
+				<div class="input-field col s6">
 					<input type="text" id="nombre" th:field="*{nombre}"> <label
-						for="nombre">Nombre completo</label>
+						for="nombre">Nombre</label>
+				</div	>
+				
+				<div class="input-field col s6">
+					<input type="text" id="apellido" th:field="*{apellido}"> <label
+						for="apellido">Apellido</label>
 				</div>
+				
 
 			
 				<div class="input-field col s12">
@@ -41,12 +47,12 @@
 
 					<p>
 						<label> <input id="exampleRadios1" name="group1"
-							type="radio" value="CLIENTE" onclick="func();" th:field="*{rol}" /> <span>Cliente</span>
+							type="radio" value="CLIENTE" th:field="*{rol}" /> <span>Cliente</span>
 						</label>
 					</p>
 					<p>
 						<label> <input id="exampleRadios2" name="group1"
-							type="radio" value="AGENTE" onclick="func();" th:field="*{rol}" /> <span>Empleado</span>
+							type="radio" value="EMPLEADO"  th:field="*{rol}" /> <span>Empleado</span>
 						</label>
 					</p>
 
@@ -54,7 +60,7 @@
 
 
 				<div class="right-align" style="margin: 10px">
-									      <button class="btn-floating btn-large halfway-fab waves-effect waves-light grey darken-3" name="action" type="submit">
+									      <button class="btn-floating btn-large halfway-fab waves-effect waves-light blue darken-3" name="action" type="submit">
         <i class="material-icons">save</i>
       </button>
 

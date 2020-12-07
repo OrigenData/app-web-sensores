@@ -11,38 +11,35 @@ import com.system.count.repository.UsuariosRepository;
 import com.system.count.service.UsuariosService;
 
 @Service
-public class UsuariosServiceImpl implements UsuariosService{
+public class UsuariosServiceImpl implements UsuariosService {
 
 	@Autowired
-	UsuariosRepository repository;
+	UsuariosRepository usuariosRepository;
+
+	@Override
+	public List<Usuarios> findAll() {
+		return usuariosRepository.findAll();
+	}
+
+	@Override
+	public Usuarios save(Usuarios usuarios) {
+		return usuariosRepository.save(usuarios);
+	}
+
+	@Override
+	public Optional<Usuarios> findById(Long id) {
+		return usuariosRepository.findById(id);
+	}
+
+	@Override
+	public Usuarios findByUsername(String usuario) {
+		return usuariosRepository.findByUsername(usuario);
+	}
+
 	
 	@Override
-	public List<Usuarios> getAllUsuarios() {
-		return repository.findAll();
-	}
-
-	@Override
-	public Usuarios saveUsuarios(Usuarios usuarios) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Optional<Usuarios> getById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Usuarios getByUsuario(String usuario) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean deleteUsuariosById(Long id) {
-		// TODO Auto-generated method stub
-		return false;
+	public void delete(Usuarios usuarios) {
+		usuariosRepository.delete(usuarios);
 	}
 
 }

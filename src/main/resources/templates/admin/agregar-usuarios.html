@@ -35,35 +35,21 @@
 				<div class="row card">
 
 
-					<div class="card card-panel z-depth-3e"
-						style="background-image: linear-gradient(to right top, #313944, #2a4a71, #1b5aa0, #1368d0, #3373ff);">
+					<div class="card card-panel z-depth-3e grey darken-3">
 
 
 
 
 						<h4 class="grey-text text-lighten-5">Usuarios Registrados</h4>
-
-
-
+						
 
 
 						<!-- Modal Trigger -->
-						<a href="#modal1"
+						<a href="#modal1Add"
 							class="btn-floating btn-large halfway-fab waves-effect waves-light blue darken-3  modal-trigger">
 							<i class="material-icons">add</i>
 						</a>
 
-						<!-- Modal Structure -->
-						<div id="modal1" class="modal">
-							<div class="modal-content">
-								<div th:include="admin/user-form.html" th:remove="tag"></div>
-							</div>
-							<!-- 
-			<div class="modal-footer">
-				<a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-			</div>
-			 -->
-						</div>
 
 
 
@@ -76,44 +62,82 @@
 
 
 
+					<div style="height: 400px; overflow-y: auto;">
 
+						<table class="responsive-table highlight">
+							<thead>
+								<tr>
+									<th>Nombre</th>
+									<th>Apellido</th>
+									<th>Username</th>
+									<th>Correo</th>
+									<th>Rol</th>
+									<th>Acciones</th>
+								</tr>
+							</thead>
 
-					<table>
-						<thead>
-							<tr>
-								<th>Nombre</th>
-								<th>Username</th>
-								<th>Correo</th>
-								<th>Acciones</th>
-							</tr>
-						</thead>
-
-						<tbody>
-							<tr th:each="data: ${Lista_Usuarios}">
-								<td th:text="${data.nombre}" />
-								<td th:text="${data.username}" />
-								<td th:text="${data.email}" />
-								<td><a onclick="executeSwal()"
-									class="btn-floating  waves-effect waves-light yellow darken-3"><i
-										class="material-icons">edit</i></a> <a th:if="${data.rol} != 'ADMIN'"
-									th:href="@{/admin/dashboard/delete/{id}(id=${data.id})}"
-									class="btn-floating  waves-effect waves-light red"><i
-										class="material-icons">delete</i></a></td>
-							</tr>
-						</tbody>
-					</table>
-
-
-
-
-
+							<tbody>
+								<tr th:each="data: ${Lista_Usuarios}">
+									<td th:text="${data.nombre}" />
+									<td th:text="${data.apellido}" />
+									<td th:text="${data.username}" />
+									<td th:text="${data.email}" />
+									<td th:text="${data.rol}" />
+									<td>
+									<a 
+										th:ArrayUsuario="|${data.id},${data.nombre},${data.apellido},${data.username},${data.email},${data.password},${data.rol}|" 
+										th:onclick="selectUsuarios(this.getAttribute('ArrayUsuario'))" 
+										href="#modal1Edit"
+										class="btn-floating  waves-effect waves-light yellow darken-3  modal-trigger">
+										<i class="material-icons">edit</i>
+										</a> 
+										
+										<a
+										th:if="${data.rol} != 'ADMIN'"
+										th:href="@{usuarios/delete/{id}(id=${data.id})}"
+										class="btn-floating  waves-effect waves-light red">
+										<i class="material-icons">delete</i>
+										</a>
+										
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 
+
+
 			</div>
+
 		</div>
 
 
+
+		<!-- Modal Structure -->
+		<div id="modal1Edit" class="modal">
+			<div class="modal-content">
+				<div th:include="admin/updateUsuario" th:remove="tag"></div>
+			</div>
+
+		</div>
+
+
+		<!-- Modal Structure -->
+		<div id="modal1Add" class="modal">
+			<div class="modal-content">
+				<div th:include="admin/addUsuario" th:remove="tag"></div>
+			</div>
+
+		</div>
+
+
+
+
+
 	</div>
+
+
 
 
 

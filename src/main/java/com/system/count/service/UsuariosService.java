@@ -3,6 +3,8 @@ package com.system.count.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
 import com.system.count.model.Usuarios;
 
 public interface UsuariosService {
@@ -11,7 +13,7 @@ public interface UsuariosService {
 	 * Metodo para mostrar usuarios
 	 * @return
 	 */
-	public List<Usuarios> getAllUsuarios();
+	public List<Usuarios> findAll();
 	
 	
 	/**
@@ -19,7 +21,7 @@ public interface UsuariosService {
 	 * @param usuarios
 	 * @return
 	 */
-	public Usuarios saveUsuarios(Usuarios usuarios);
+	public Usuarios save(Usuarios usuarios);
 	
 	
 	/**
@@ -27,7 +29,7 @@ public interface UsuariosService {
 	 * @param id
 	 * @return
 	 */
-	public Optional<Usuarios> getById(Long id);
+	public Optional<Usuarios> findById(Long id);
 	
 	
 	/**
@@ -35,15 +37,16 @@ public interface UsuariosService {
 	 * @param id
 	 * @return
 	 */
-	public Usuarios getByUsuario(String usuario);
+	public Usuarios findByUsername(String usuario);
 		
 	
 	/**
 	 * Eliminar usuario por ID
 	 * @param id
+	 * @return 
 	 * @return
 	 */
-	public boolean deleteUsuariosById(Long id);
+	public void delete(Usuarios usuarios);
 	
 
 }

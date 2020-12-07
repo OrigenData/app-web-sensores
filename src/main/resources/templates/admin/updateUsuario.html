@@ -1,0 +1,72 @@
+	<div class="row">
+
+		<form class="col s12" action="#" id="url_id" th:action="@{usuarios/update}"
+			th:object="${usuarios}" method="post" >
+
+			<div class="row card">
+
+				<div class="card-panel z-depth-3 grey darken-3">
+					<h4 class="grey-text text-lighten-5">Actualizar usuario</h4>
+				</div>
+				
+				<input  type="hidden" value="" class="form-control" id="modal_id" name="id"/>
+
+				<div class="input-field col s6">
+					<input type="text" id="modal_nombre" th:field="*{nombre}" name="nombre"> <label
+						for="nombre">Nombre</label>
+				</div>
+				
+				<div class="input-field col s6">
+					<input type="text" id="modal_apellido" th:field="*{apellido}" name="apellido"> <label
+						for="apellido">Apellido</label>
+				</div>
+				
+
+			
+				<div class="input-field col s12">
+					<input type="text" id="modal_email" th:field="*{email}" name="email"> <label
+						for="nombre">Correo</label>
+				</div>
+
+				<div class="input-field col s12">
+					<input type="text" id="modal_username" th:field="*{username}" name="username"> <label
+						for="nombre">Usuario</label>
+				</div>
+
+				<div class="input-field col s12">
+					<input type="password" id="modal_password" th:field="*{password}" name="password"> <label
+						for="nombre">Contraseña</label>
+				</div>
+
+				<div class="input-field col s2">
+					<label>Rol de usuario:</label>
+
+				</div>
+
+				<div class="input-field col s10">
+
+					<p>
+						<label> <input name="group1"
+							type="radio" value="CLIENTE" /> <span>Cliente</span>
+						</label>
+					</p>
+					<p>
+						<label> <input  name="group1"
+							type="radio" value="EMPLEADO" /> <span>Empleado</span>
+						</label>
+					</p>
+
+				</div>
+
+
+				<div class="right-align" style="margin: 10px">
+									      <button class="btn-floating btn-large halfway-fab waves-effect waves-light blue darken-3" name="action" type="submit">
+        <i class="material-icons">save</i>
+      </button>
+
+				</div>
+				<br>
+			</div>
+
+		</form>
+	</div>

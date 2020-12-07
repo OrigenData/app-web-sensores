@@ -8,6 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+
+
 
 
 @Entity
@@ -28,9 +32,11 @@ public class Usuarios implements Serializable {
 	private String rol;
 	
 	@Column
+	@NotBlank
 	private String nombre;
 	
 	@Column 
+	@NotEmpty
 	private String apellido;
 	
 	@Column

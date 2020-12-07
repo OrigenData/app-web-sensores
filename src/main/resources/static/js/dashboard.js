@@ -8,25 +8,39 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     var elems3 = document.querySelectorAll('.modal');
-    var instances3 = M.Modal.init(elems, options3);
+    var instances3 = M.Modal.init(elems3);
     
 });
-
-
 
 
 $(document).ready(function(){
 	// SIDENAV
 	$('.sidenav').sidenav();
 	$('.sidenav').sidenav('open');
+	$('.modal').modal();
 });
 
 
 
+  function selectUsuarios(stringUpdateUsuarios){
+  
+  var arrayString = stringUpdateUsuarios.split(",");
+  
+  console.log(arrayString)
+  
+  $('#modal_id').val(arrayString[0]);
+  $('#modal_nombre').val(arrayString[1]);
+  $('#modal_apellido').val(arrayString[2]);
+  $('#modal_username').val(arrayString[3]);
+  $('#modal_email').val(arrayString[4]);
+  $('#modal_password').val(arrayString[5]);
+  $('#modal_rol').val(arrayString[6]);
+  
+  
+        
+  }
 
-  $(document).ready(function(){
-    $('.modal').modal();
-  });
+
   
   
 function executeSwal()   {
